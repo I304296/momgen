@@ -112,17 +112,6 @@ def callRAG(question):
 #Not in use - credential file is used to maintain this info
 def setEnv():
     print("Setting Environment...")
-    os.environ["AWS_ACCESS_KEY_ID"] = "AKIATDGJ6OMFJCBLCNUS"
-    os.environ["AWS_SECRET_ACCESS_KEY"] = "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"
-    os.environ["AICORE_LLM_AUTH_URL"] = "https://btpllm-i304296.authentication.sap.hana.ondemand.com"
-    os.environ["AICORE_LLM_CLIENT_ID"] = "sb-195169df-4b34-4fcc-b24b-3a6b01bc20c3!b119297|xsuaa_std!b77089"
-    os.environ["AICORE_LLM_CLIENT_SECRET"] = "f786b365-3685-4faa-94b4-9a5d08685c01$tFZGs-THeyz23lf6rIYrElJCroh5ERy__UHDMlcu_6o="
-    os.environ["AICORE_LLM_API_BASE"] = "https://api.ai.internalprod.eu-central-1.aws.ml.hana.ondemand.com"
-    os.environ["AICORE_LLM_RESOURCE_GROUP"] = "default"
-    os.environ["HANA_DB_ADDRESS"] = "916aa478-2d88-4d34-85d2-8578be678367.hna0.canary-eu10.hanacloud.ondemand.com"
-    os.environ["HANA_DB_PORT"] = "443"
-    os.environ["HANA_DB_USER"] = "DBADMIN"
-    os.environ["HANA_DB_PASSWORD"] = "HCP@sap1"
     print("Environment Set!")
     
 def loadData(folderName):
