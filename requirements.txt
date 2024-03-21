@@ -1,0 +1,7 @@
+Flask
+generative-ai-hub-sdk
+langchain-community
+langchain
+hdbcli
+unstructured[docx]
+boto3

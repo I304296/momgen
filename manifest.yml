@@ -1,0 +1,7 @@
+---
+applications:
+- memory: 512MB
+  disk_quota: 2048MB
+  random-route: true
+buildpacks:
+    - https://github.com/cloudfoundry/python-buildpack.git
