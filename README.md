@@ -16,3 +16,9 @@ App can be accessed via the following URL:
 https://rise-setup-sh397zlr.launchpad.cfapps.us10.hana.ondemand.com/site?siteId=c8a7c371-da6a-45a5-94e5-a386e89311e1#buildapps67575-open?sap-ui-app-id-hint=saas_approuter_buildapps67575
 
 Please contact: shibaji.chandra@sap.com if you need access.
+
+## Architecture
+The App is stacked on 3 Tier Architecture. The core is dependdent on SAP BTP AI Core services and HANA Cloud Vector Engine. On top of that there is a service API layer built on SAP BTP Cloud Foundry based on Python buildpack using LangChain libraries. Last but on the least the UX layer was built using SAP Build Apps - Low code No code platform and deployed on SAP Build Workzone for role based access.
+
+The following diagram shows the architecture diagram:
+![Architecrure Diagram](images/mom-gen-architecture.jpg)
