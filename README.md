@@ -50,3 +50,16 @@ The App is using Python build pack. Please refer to the  ![requirements.txt](req
     - Sample MTAR for the build Apps is given ![Sample UX Build App Deployable](UX/app-67575_web_build-5561.mtar)
     - Refer to Help link for Build Apps deployment: https://help.sap.com/docs/build-apps/service-guide/build-and-deploy-web-applications
 7. Setup IAS connectivity between Build App and Build Workzone. Please refer to help link : here https://help.sap.com/docs/build-apps/service-guide/integration-to-app-builder#deployed-applications and deploy the app to SAP Build Workzone.
+
+## Use Case Flow
+1. Turn on Meeting Transcript on your web meetings like MS Teams or Zoom.
+2. Typically the transcripts are comprising of each dialogue with time-stamp and looks like following:
+![Raw Transcript](images/raw-transcript.png)
+This is cumbersome to compile meeting insights and summary from such document.
+3. With MoMGen - you can flexibly define document structure.
+![Create Document Structure](images/docu-structure.png)
+4. Ask AI to fill out the section based on the meeting context.
+![Ask AI](images/ask ai.png)
+5. Get high quality meeting insights.
+![Output](images/output.png)
+
