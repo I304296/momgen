@@ -1,7 +1,9 @@
 Flask
+flask-cors
 generative-ai-hub-sdk
 langchain-community
 langchain
 hdbcli
 unstructured[docx]
 boto3
+Faker

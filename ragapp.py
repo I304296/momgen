@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS
 import os
 from flask import request
 from flask import Response
@@ -18,7 +19,14 @@ from langchain_community.document_loaders import S3FileLoader
 from langchain_community.document_loaders import S3DirectoryLoader
 from hdbcli import dbapi
 
+import nltk
+from faker import Faker
+
+nltk.download('maxent_ne_chunker')
+nltk.download('words')  
+
 app = Flask(__name__)
+CORS(app)
 # Port number is required to fetch from env variable
 # http://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#PORT
 
@@ -41,9 +49,15 @@ with open(cred_file, "r") as file:
 @app.route('/load')
 def load():
     folderName = request.args.get('f')
+    a = request.args.get('a')
     #setEnv()
-    loadData(folderName)
-    returnObj = {"message":"OK"}
+    anon=False
+    if a == 'Y':
+        anon=True
+    else:
+        anon=False
+    loadData(folderName,anon)
+    returnObj = [{"message":"OK"}]
     return Response(json.dumps(returnObj), mimetype='application/json')
 
 # Method to query via RAG
@@ -52,22 +66,23 @@ def query():
     question = request.args.get('q')
     print(question)
     #setEnv()
-    returnObj = {
+    returnObj = [{
         "question": question,
         "answer":callRAG(question)
-        }
+        }]
     return Response(json.dumps(returnObj), mimetype='application/json')
 
 # Method to query via RAG
+cors=CORS(app)
 @app.route('/prompt', methods = ['POST'])
 def prompt():
-    question = request.json['question']
+    question = request.json['id']
     print(question)
     #setEnv()
-    returnObj = {
+    returnObj = [{
         "question": question,
         "answer":callRAG(question)
-        }
+        }]
     return Response(json.dumps(returnObj), mimetype='application/json')
         
 def callRAG(question):
@@ -114,13 +129,28 @@ def setEnv():
     print("Setting Environment...")
     print("Environment Set!")
     
-def loadData(folderName):
+def loadData(folderName, anon):
     #loader = S3FileLoader("hcp-b4d8c785-4fc5-4ee7-bb59-a01917f0488f", fileName)
     loader = S3DirectoryLoader("hcp-b4d8c785-4fc5-4ee7-bb59-a01917f0488f",prefix=folderName)
     document = loader.load()
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=200, chunk_overlap=30)
     texts = text_splitter.split_documents(document)
+
+    if anon:
+        fake = Faker()
+        for text in texts:
+            line = text.page_content
+            tokens = nltk.word_tokenize(line)
+            pos_tags = nltk.pos_tag(tokens)
+            named_entities = nltk.ne_chunk(pos_tags)
+            for named_entity in named_entities:
+                if hasattr(named_entity, 'label'):
+                    if named_entity.label() == 'PERSON':
+                        text.page_content=line.replace(named_entity[0][0], fake.name()) 
+                    if named_entity.label() == 'ORGANIZATION':
+                        text.page_content=line.replace(named_entity[0][0], fake.company())
     
+
     proxy_client = get_proxy_client("gen-ai-hub")
     embeddings = OpenAIEmbeddings(proxy_model_name="text-embedding-ada-002", proxy_client=proxy_client)
     

@@ -1,0 +1,14 @@
+Title:
+What is the subject discussed most? Based on this suggest a title. Don't know not acceptable. Give suggested title only.
+Overall Summary:
+Can you write a summary of the conversation comprising subjects discussed, overall sentiment and follow up actions?
+Integration Domain:
+Can you write a summary on what was discussed on Integration in 3 bullet points? Also list down sentiment and follow up action.
+App Dev Domain:
+Can you write a summary on what was discussed on Application Development in 3 bullet points? Also list down sentiment and follow up action.
+AI Domain:
+Can you write a summary on what was discussed on AI in 3 bullet points? Also list down sentiment and follow up action.
+Data Domain:
+Can you write a summary on what was discussed on Data in 3 bullet points? Also list down sentiment and follow up action.
+Analytics Domain:
+Can you write a summary on what was discussed on Analytics in 3 bullet points? Also list down sentiment and follow up action.

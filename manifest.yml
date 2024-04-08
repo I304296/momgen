@@ -1,6 +1,6 @@
 ---
 applications:
-- memory: 512MB
+- memory: 2048MB
   disk_quota: 2048MB
   random-route: true
 buildpacks:
