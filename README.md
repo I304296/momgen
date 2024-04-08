@@ -9,7 +9,7 @@ To make a meaningful and insightful meeting minutes you need to understand the c
 
 MoMGen does this exactly. It allows you to create a structure of the output document based on your need and allow Gen AI to fill out the different sections based on your intent.
 
-This application is a demo app that shows the power of SAP's Business AI offering - where the core AI services are used from SAP BTP AI Core and vector embeddings are stored on SAP HANA Cloud Vector Engine. The service layer is built on LangChain using SAP AI Core proxy that gives flexibility to chose the LLM model. By default GPT3.5 is chosen. The UX is developed using SAP Build Apps - LCNC platform and the app is deployed on SAP BTP Cloud Foundry environment. The app can be accessed securely via the SAP Build Workzone Standard launchpad.
+This application is a demo app that shows the power of SAP's Business AI offering - where Retrieval Augmented Generation (RAG) architecture is implemented using SAP BTP services. LLM and embeddings are used from SAP BTP AI Core and vector embeddings are stored on SAP HANA Cloud Vector Engine. The service layer is built on LangChain using SAP AI Core proxy that gives flexibility to chose the LLM model. By default GPT3.5 is chosen. The UX is developed using SAP Build Apps - LCNC platform and the app is deployed on SAP BTP Cloud Foundry environment. The app can be accessed securely via the SAP Build Workzone Standard launchpad.
 
 ## How to run
 App can be accessed via the following URL:
