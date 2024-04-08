@@ -12,8 +12,8 @@ MoMGen does this exactly. It allows you to create a structure of the output docu
 This application is a demo app that shows the power of SAP's Business AI offering - where Retrieval Augmented Generation (RAG) architecture is implemented using SAP BTP services. LLM and embeddings are used from SAP BTP AI Core and vector embeddings are stored on SAP HANA Cloud Vector Engine. The service layer is built on LangChain using SAP AI Core proxy that gives flexibility to chose the LLM model. By default GPT3.5 is chosen. The UX is developed using SAP Build Apps - LCNC platform and the app is deployed on SAP BTP Cloud Foundry environment. The app can be accessed securely via the SAP Build Workzone Standard launchpad.
 
 ## How to run
-App can be accessed via the following URL:
-https://rise-setup-sh397zlr.launchpad.cfapps.us10.hana.ondemand.com/site?siteId=c8a7c371-da6a-45a5-94e5-a386e89311e1#buildapps67575-open?sap-ui-app-id-hint=saas_approuter_buildapps67575
+App can be accessed via the following Link: 
+[MoMGenApp](https://rise-setup-sh397zlr.launchpad.cfapps.us10.hana.ondemand.com/site?siteId=c8a7c371-da6a-45a5-94e5-a386e89311e1#buildapps67575-open?sap-ui-app-id-hint=saas_approuter_buildapps67575)
 
 Please contact: shibaji.chandra@sap.com if you need access.
 
