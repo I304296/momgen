@@ -1,61 +1,18 @@
-# Sample Flask application for Cloud Foundry
+# Gen AI Powered Meeting Minute Generator 
 ## About this application
-This is a sample application to deploy Flask application for Cloud Foundry (CF).
-The contents is based on repository [yuta-hono/flask-cloudfoundry-sample](https://github.com/yuta-hono/flask-cloudfoundry-sample).
 
-Please see blog post ["Create simple Flask REST API using Cloud Foundry"](https://blogs.sap.com/2018/12/12/create-simple-flask-rest-api-using-cloud-foundry/) for further detail.
+MoMGen is a tool that helps you analyze meeting transcripts and prepare structured documents within minutes.
+Typically, when you have web meetings using MS Teams or Zoom, you can turn on the meeting transcripts which keeps track of the conversations and provides detailed dialogs based on time stamp. However, it is often difficult to review those transcripts and make a meaningful summary.
 
-## Environment to run
-- Cloud Foundry (Diego) or the version which Buildpack available
+Modern tools like MS Copilot comes up with meeting summary options. However, that never comes up with summary with intended purpose.
+To make a meaningful and insightful meeting minutes you need to understand the context and intent behind the meeting and structure your output document accordingly.
+
+MoMGen does this exactly. It allows you to create a structure of the output document based on your need and allow Gen AI to fill out the different sections based on your intent.
+
+This application is a demo app that shows the power of SAP's Business AI offering - where the core AI services are used from SAP BTP AI Core and vector embeddings are stored on SAP HANA Cloud Vector Engine. The service layer is built on LangChain using SAP AI Core proxy that gives flexibility to chose the LLM model. By default GPT3.5 is chosen. The UX is developed using SAP Build Apps - LCNC platform and the app is deployed on SAP BTP Cloud Foundry environment. The app can be accessed securely via the SAP Build Workzone Standard launchpad.
 
 ## How to run
-1. select cf api url
+App can be accessed via the following URL:
+https://rise-setup-sh397zlr.launchpad.cfapps.us10.hana.ondemand.com/site?siteId=c8a7c371-da6a-45a5-94e5-a386e89311e1#buildapps67575-open?sap-ui-app-id-hint=saas_approuter_buildapps67575
 
-```
-cf api <your api URL>
-```
-
-2. login to your space
-```
-cf login
-```
-
-3. Push your application to CF from directory of your application on local PC
-```
-cf push <your application name>
-```
-
-
-## Files
-
-### Files to declare runtime envinronment
-
-#### requirements.txt
-Pip requirements, this automatically satisfied by CF in a staging phase.
-There is only "Flask" in the file.
-You can add libraries here.
-
-#### runtime.txt
-The file specifies Python version to run this application by CF.
-See more details at [Python Buildpack](https://docs.cloudfoundry.org/buildpacks/python/index.html "Python Buildpack").
-Here I used "python-3.6.6", which is the latest python version of python buildpack on SAP CF as of 2018/12/12.
-[Here](https://github.com/cloudfoundry/python-buildpack/releases/tag/v1.6.20) is supported python version for Python Buildpack 1.6.20.
-
-#### manifest.yml
-The file specifies about the specs of instance (memory/disk quota, etc).
-
-#### Procfile
-The file specify what commands run the application.
-For more details, see at [About Procfiles](https://docs.cloudfoundry.org/buildpacks/prod-server.html#procfile).
-
-
-### Web application files
-
-#### hello.py
-The simple Flask application run on CF.
-Important things here are:
-
-- App `host` requires to be set as "0.0.0.0"
-  - CF routes the traffic from external in the router, and since all the component is scalable, CF can not restrict the access with source IPs 
-- App `port` requires to be set with dynamic value comes from CF envinronmental value
-  - Since the port is dynamic value, an application can not specify a static port number. This port number requires to be set with dynamic value also
+Please contact: shibaji.chandra@sap.com if you need access.
