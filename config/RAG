@@ -1,0 +1,11 @@
+#
+#Mon Apr 08 17:11:39 UTC 2024
+Description=RAG
+Type=HTTP
+HTML5.DynamicDestination=true
+Authentication=NoAuthentication
+WebIDEUsage=odata_abap, dev_abap
+Name=RAG
+WebIDEEnabled=true
+ProxyType=Internet
+URL=https\://ragapp-funny-oryx-by.cfapps.sap.hana.ondemand.com/load?f\=MOM

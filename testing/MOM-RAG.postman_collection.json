@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "6e65a62c-bb41-40d3-8a56-4ec06ced0190",
+		"name": "MOM-RAG",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12581188"
+	},
+	"item": [
+		{
+			"name": "Load Data Local",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Prompt Query Local",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Prompt Post Local",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Load Data CF",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ragapp-funny-oryx-by.cfapps.sap.hana.ondemand.com/load?f=MOM",
+					"protocol": "https",
+					"host": [
+						"ragapp-funny-oryx-by",
+						"cfapps",
+						"sap",
+						"hana",
+						"ondemand",
+						"com"
+					],
+					"path": [
+						"load"
+					],
+					"query": [
+						{
+							"key": "f",
+							"value": "MOM"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prompt Post CF",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
