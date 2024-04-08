@@ -44,10 +44,10 @@ The App is using Python build pack. Please refer to the  [requirements.txt](requ
 1. First setup environment for AI Core and HANA VE using the stater kit (link given above)
 2. Enable Cloud Foundry environment.
 3. Then, deploy the Python app on Cloud Foundry environment
-4. Test out the API endpoints that the Python App is exposing. You can use the ![POSTMAN Collection](testing/MOM-RAG.postman_collection.json) to test the APIs
-5. Setup destination to expose the API. Sample destination can be configured using ![Sample Destination File](config/RAG)
+4. Test out the API endpoints that the Python App is exposing. You can use the [POSTMAN Collection](testing/MOM-RAG.postman_collection.json) to test the APIs
+5. Setup destination to expose the API. Sample destination can be configured using [Sample Destination File](config/RAG)
 6. Deploy the Build App using the MTAR. Please use command line: cf deploy <your MTAR file name>.mtar
-    - Sample MTAR for the build Apps is given ![Sample UX Build App Deployable](UX/app-67575_web_build-5561.mtar)
+    - Sample MTAR for the build Apps is given [Sample UX Build App Deployable](UX/app-67575_web_build-5561.mtar)
     - Refer to Help link for Build Apps deployment: https://help.sap.com/docs/build-apps/service-guide/build-and-deploy-web-applications
 7. Setup IAS connectivity between Build App and Build Workzone. Please refer to help link : here https://help.sap.com/docs/build-apps/service-guide/integration-to-app-builder#deployed-applications and deploy the app to SAP Build Workzone.
 
