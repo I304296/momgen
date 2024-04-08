@@ -38,7 +38,7 @@ For the AI Core and HANA VE setup you can refer to the link below to utilize the
 https://github.tools.sap/btp-ai/genai-starter-kit
 
 ## Deployment Dependency
-The App is using Python build pack. Please refer to the  ![requirements.txt](requirements.txt) to get more details.
+The App is using Python build pack. Please refer to the  [requirements.txt](requirements.txt) to get more details.
 
 ## Deployment Sequence
 1. First setup environment for AI Core and HANA VE using the stater kit (link given above)
