@@ -90,7 +90,9 @@ def callRAG(question):
     proxy_client = get_proxy_client("gen-ai-hub")
     #proxy_client = get_proxy_client("aicore")
     print("Setting LLM Proxy...")	
-    llm = ChatOpenAI(proxy_model_name="gpt-35-turbo", proxy_client=proxy_client)
+    
+    #llm = ChatOpenAI(proxy_model_name="gpt-35-turbo", proxy_client=proxy_client)
+    llm = ChatOpenAI(proxy_model_name="gpt-4-32k", proxy_client=proxy_client)
     print("Getting Embeding...")	
     embeddings = OpenAIEmbeddings(proxy_model_name="text-embedding-ada-002", proxy_client=proxy_client)
     memory = ConversationBufferMemory(memory_key="chat_history", output_key="answer", return_messages=True)
